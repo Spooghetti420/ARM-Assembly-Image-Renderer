@@ -48,5 +48,6 @@ except IndexError:
     i = input("Please enter an output file name (leave blank for default): ")
     output_filename = i if i else f"asm-{time.strftime('%Y-%m-%d-%M-%S')}.asm"
 
+os.makedirs("output", exist_ok=True)
 with open(os.path.join("output", output_filename), mode="w") as output_asm:
     output_asm.write(string_output)
