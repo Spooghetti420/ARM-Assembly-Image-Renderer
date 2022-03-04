@@ -41,11 +41,11 @@ loop:
     // Get the image data of the current row, r0, storing into r2
     ldr r2, [r1]
     add r0, r0, #1
-    cmp r0, #23
+    cmp r0, #24
     bgt exit
 
     // Begin extracting each pixel (bit)
-    mov r3, #32
+    mov r3, #31
 pixels:
     // Now extracting nth bit:
     // Operand of bit extraction is r2
@@ -58,7 +58,6 @@ pixels:
     lsl r6, r6, r3
     and r7, r2, r6
     lsr r7, r7, r3
-    //out r7, 4
 
     cmp r7, #1
     bne blank_pixel
@@ -69,9 +68,9 @@ blank_pixel:
     add r11, r11, #1
 
     // Move onto next pixel in the row
-    sub r3, r3, #1
     cmp r3, #0
-    bne pixels
+    sub r3, r3, #1
+    bgt pixels
 
     b loop
 
@@ -82,25 +81,25 @@ img_data:
 	dat 0
 	dat 0
 	dat 0
-	dat 122880
-	dat 57344
-	dat 122880
-	dat 1048332
-	dat 4194206
-	dat 268435356
-	dat 142606328
-	dat 138412024
-	dat 138412024
-	dat 209715184
-	dat 109051888
-	dat 58720240
-	dat 33554416
-	dat 33554368
-	dat 8388544
-	dat 4194240
-	dat 4194176
-	dat 2096896
-	dat 1047552
-	dat 8192
+	dat 245760
+	dat 114688
+	dat 245760
+	dat 2096664
+	dat 8388412
+	dat 536870712
+	dat 285212656
+	dat 276824048
+	dat 276824048
+	dat 419430368
+	dat 218103776
+	dat 117440480
+	dat 67108832
+	dat 67108736
+	dat 16777088
+	dat 8388480
+	dat 8388352
+	dat 4193792
+	dat 2095104
+	dat 16384
 	dat 0
 ```
