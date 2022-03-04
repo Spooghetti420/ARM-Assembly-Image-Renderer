@@ -14,12 +14,16 @@ or, as with the input image, through user input at runtime.
 The program depends on `PIL` (installation: `pip install Pillow`) to process the images. Furthermore, any user who has the `pyperclip` clipboard module may also benefit from having the program copied directly to the clipboard.
 
 ## Gallery
-![Teapot rendered](assets/utah_teapot.png "Teapot rendered in the virtual machine")
+### Utah teapot
+![Utah teapot](assets/utah_teapot.png "Teapot rendered in the virtual machine")
+
+### Reimu holding the apple
+![Bad Apple!! frame](assets/bad_apple.png "Opening frame from Bad Apple!! in the virtual machine")
 
 ## Example program
 Note: the only part that changes for each program is the `img_data` portion at the bottom of the file.
 The remainder of the assembly is able to render any such image data once it's placed in that section.
-This program is the example file in [output/teapot.asm](output/teapot.asm).
+This program is the example file in [examples/teapot.asm](output/teapot.asm).
 ```
 // Run at: https://peterhigginson.co.uk/AQA/
 // r12 marks the pointer to the image data in memory
