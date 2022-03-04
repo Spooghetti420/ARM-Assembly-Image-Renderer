@@ -23,7 +23,7 @@ The program depends on `PIL` (installation: `pip install Pillow`) to process the
 ## Example program
 Note: the only part that changes for each program is the `img_data` portion at the bottom of the file.
 The remainder of the assembly is able to render any such image data once it's placed in that section.
-This program is the example file in [examples/teapot.asm](output/teapot.asm).
+This program is the example file in [examples/teapot.asm](examples/teapot.asm).
 ```
 // Run at: https://peterhigginson.co.uk/AQA/
 // r12 marks the pointer to the image data in memory
