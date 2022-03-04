@@ -26,20 +26,13 @@ except FileNotFoundError:
 def color_value(pixel):
     return 1 if (sum(pixel) / len(pixel)) > 127 else 0
 
-pixels = [0 for i in range(img.height*img.width)]
-for row in range(img.height):
-    for col in range(img.width):
-        index = col + row*img.width
-        pixels[index] = color_value(img.getpixel((col, row)))
-
 out = []
-binary_string = ""
-for pixel in pixels:
-    if len(binary_string) >= 31:
-        out.append("\t" + f"dat {int(binary_string, base=2)}")
-        binary_string = ""
-    else:
-        binary_string += str(pixel)
+for row in range(img.height):
+    binary_row = ""
+    for col in range(img.width):
+        c = color_value(img.getpixel((col, row)))
+        binary_row += str(c)
+    out.append("\t" + f"dat {str(int(binary_row, 2))}")
 
 with open(os.path.join("assembly", "image_drawer.asm"), mode="r", encoding="utf-8") as asm_base_file:
     string_output = asm_base_file.read() + "\n".join(out)
